@@ -8,10 +8,11 @@ def fv(rate, nper, pmt, pv=0, type="annuity"):
             compound_sum += (1+rate)**x
         return pmt * compound_sum
 
-# print fv(.07, 10, 0, 500, "simple")
-# print fv(.08, 40, 10000, 0, "annuity")
+# print fv(.07, 10, 0, 500, "simple") # 983.58
+# print fv(.08, 40, 10000, 0, "annuity") # 2.59 million
 
-def fv(rate, nper, pmt, fv=0, type="simple"):
+def pv(rate, nper, pmt, fv=0, type="simple"):
     if type=="simple":
         return fv / ((1+rate)**nper)
         
+# print pv(0.1, 2, 0, 121000) # 100,000
