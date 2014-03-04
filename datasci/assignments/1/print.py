@@ -1,3 +1,4 @@
+# Using urllib,urllib2 instead of requests just as an exercise
 import urllib2
 import urllib
 import json
@@ -48,11 +49,11 @@ def get_bearer():
 # The actual API request haha
 # Search for command line argument
 args = sys.argv
-query = "microsoft"
+query = "data science"
 if len(args) > 1:
     query = args[1]
 else:
-    query = "microsoft"
+    query = query
     #print "Need at least 1 argo"
     #exit()    
 
