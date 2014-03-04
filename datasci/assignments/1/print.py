@@ -76,5 +76,16 @@ response = urllib2.urlopen(req)
 
 # Getting the results
 results = json.load(response)
+statuses = results["statuses"]
+#print statuses[0]["text"]
 
-print json.dumps(results, indent=4)
+for status in statuses:
+    name = status["user"]["name"]
+    screen_name = status["user"]["screen_name"]
+    text = status["text"]
+    output =  name + " (@" + screen_name + ")" + ": " + text + "\n"
+
+    # .encode("utf-8") to prevent "'ascii' codec can't encode" problem
+    print output.encode("utf-8")
+
+#print json.dumps(results, indent=4)
