@@ -2,11 +2,22 @@ import oauth2 as oauth
 import urllib2 as urllib
 
 # See Assignment 1 instructions or README for how to get these credentials
-access_token_key = "<Enter your access token key here>"
-access_token_secret = "<Enter your access token secret here>"
+creds = open("creds.txt", "r")
 
-consumer_key = "<Enter consumer key>"
-consumer_secret = "<Enter consumer secret>"
+creds_arr = []
+
+for line in creds:
+  creds_arr.append(line)
+
+
+access_token_key = creds_arr[2]
+access_token_secret = creds_arr[3]
+
+consumer_key = creds_arr[0]
+consumer_secret = creds_arr[1]
+
+#print access_token_key
+creds.close()
 
 _debug = 0
 
