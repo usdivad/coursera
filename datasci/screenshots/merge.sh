@@ -22,7 +22,11 @@ do
     echo "'$i'" >> filelist.txt
 done
 
-#ImageMagick conversion
+#ImageMagick conversion (reduced size)
+#convert @filelist.txt -filter box -sample 51% -compress zip -define pdf:extent=25000kb $destination
+#convert @filelist.txt -filter gaussian -resize 66% -compress zip $destination
+
+#full quality conversion
 convert @filelist.txt -compress zip $destination
 
 #Timing
